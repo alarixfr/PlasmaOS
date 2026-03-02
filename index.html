@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlasmaOS</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/plasmaos.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/lockscreen.css">
-    <script src="./assets/js/lockscreen.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/system.js" defer></script>
 </head>
 <body>
-    <div class="lockscreen-container">
+    <div id="lockscreen-container" class="lockscreen-container">
         <div class="lockscreen-greeting">
             <h1 id="lockscreen-time">00:00</h1>
             <p id="lockscreen-greet">Hello!</p>
@@ -19,6 +20,31 @@
         <div class="lockscreen-passcode">
             <input id="lockscreen-input" type="text" maxlength="8" placeholder="Password" autocomplete="off">
             <p id="lockscreen-error">Hint: Check console</p>
+        </div>
+    </div>
+    
+    <div id="system-ui" class="system-ui">
+        <div id="infobar">
+            <p>PlasmaOS V1</p>
+            <p id="time">00:00</p>
+            <p>Exit/Turn Off</p>
+        </div>
+        <div id="appdisplay">
+            
+        </div>
+        <div id="taskbar">
+            <div id="system-app" class="app">
+                <img class="plasmaos-logo" src="./assets/img/plasmaos.png">
+            </div>
+            <div id="terminal-app" class="app">
+                <img class="plasmaos-logo" src="./assets/img/terminalapp.png">
+            </div>
+            <div id="note-app" class="app">
+                <img class="plasmaos-logo" src="./assets/img/noteapp.png">
+            </div>
+            <div id="pomodoro-app" class="app">
+                <img class="plasmaos-logo" src="./assets/img/pomodoroapp.png">
+            </div>
         </div>
     </div>
 </body>
