@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bricolage Grotesque', 'Arial';
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('../img/lockscreen.png');
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+
+.lockscreen-container {
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    gap: 40vh;
+}
+
+.lockscreen-greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lockscreen-greeting #lockscreen-time {
+    font-size: 5rem;
+}
+
+.lockscreen-greeting #lockscreen-greet {
+    font-size: 1.8rem;
+}
+
+.lockscreen-passcode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.lockscreen-passcode input {
+    border: 1px solid black;
+    padding: 0.6rem 0.8rem;
+    outline: none;
+    background: rgba(235, 235, 235, 0.4);
+    box-shadow: 0px 2px rgba(0, 0, 255, 0.596);
+    border-radius: 2px;
+}
+
+.passcode-error {
+    box-shadow: 0px 2px rgba(255, 0, 0, 0.596) !important;
+}
+
+.passcode-correct {
+    box-shadow: 0px 2px rgba(0, 255, 0, 0.596) !important;
+}

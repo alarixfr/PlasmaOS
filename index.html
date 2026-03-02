@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlasmaOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/lockscreen.css">
+    <script src="./assets/js/lockscreen.js" defer></script>
+</head>
+<body>
+    <div class="lockscreen-container">
+        <div class="lockscreen-greeting">
+            <h1 id="lockscreen-time">00:00</h1>
+            <p id="lockscreen-greet">Hello!</p>
+        </div>
+        <div class="lockscreen-passcode">
+            <input id="lockscreen-input" type="text" maxlength="8" placeholder="Password" autocomplete="off">
+            <p id="lockscreen-error">Hint: Check console</p>
+        </div>
+    </div>
+</body>
+</html>
