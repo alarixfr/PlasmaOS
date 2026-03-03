@@ -1,9 +1,10 @@
 const lockscreenContainer = document.getElementById('lockscreen-container');
 const systemUI = document.getElementById('system-ui');
 const time = document.getElementById("lockscreen-time");
+const infobarTime = document.getElementById('infobar-time');
 const greet = document.getElementById("lockscreen-greet");
 const passInput = document.getElementById('lockscreen-input');
-const greetingList = ["Hello!", "Welcome Back!", "How's Today?"]
+const greetingList = ["Hello!", "Welcome Back!", "How's Today?"];
 const passcode = 'plasmaos';
 
 let unlocked = false;
@@ -24,6 +25,7 @@ function setTime() {
         minute: "2-digit",
     });
     time.textContent = timeFormat;
+    infobarTime.textContent = timeFormat;
 }
 
 function setGreeting() {

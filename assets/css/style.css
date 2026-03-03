@@ -6,6 +6,11 @@
     font-family: 'Bricolage Grotesque', 'Arial';
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 img {
     -drag: none;
     -webkit-user-drag: none;
@@ -40,6 +45,7 @@ body {
 
 .lockscreen-greeting #lockscreen-time {
     font-size: 5rem;
+    color: white;
 }
 
 .lockscreen-greeting #lockscreen-greet {
@@ -117,6 +123,7 @@ body {
 #appdisplay {
     background: none;
     flex: 20;
+    position: relative;
 }
 
 #infobar p {
@@ -138,4 +145,44 @@ body {
 .app img {
     height: 40px;
     border-radius: 6px;
+}
+
+.window {
+    color: white;
+    background: rgba(75, 9, 85, 0.8);
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.window-control {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid white;
+    margin-bottom: 8px;
+}
+
+.window-control button {
+    background: red;
+    border: none;
+    padding: 3px;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.window-control button:hover {
+    background: darkred;
+}
+
+.window-content {
+    width: 100%;
 }

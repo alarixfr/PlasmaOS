@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/system.js" defer></script>
+    <script src="./assets/js/app.js" defer></script>
 </head>
 <body>
     <div id="lockscreen-container" class="lockscreen-container">
@@ -26,11 +27,11 @@
     <div id="system-ui" class="system-ui">
         <div id="infobar">
             <p>PlasmaOS V1</p>
-            <p id="time">00:00</p>
-            <p>Exit/Turn Off</p>
+            <p id="infobar-time">00:00</p>
+            <p><a href="/">Lock/Turn Off</a></p>
         </div>
         <div id="appdisplay">
-            
+            <about-app></about-app>
         </div>
         <div id="taskbar">
             <div id="system-app" class="app">
