@@ -212,7 +212,59 @@ class pomodoroAppWindow extends HTMLElement {
 
         this.querySelector('.window-close').addEventListener('click', () => {
             activeWindow = '';
+            clearInterval(timerInterval);
             this.remove();
+        });
+
+        const phases = [
+            { label: 'Work - 1',      duration: 25 * 60 },
+            { label: 'Short Break - 1', duration: 5 * 60 },
+            { label: 'Work - 2',      duration: 25 * 60 },
+            { label: 'Short Break - 2', duration: 5 * 60 },
+            { label: 'Work - 3',      duration: 25 * 60 },
+            { label: 'Short Break - 3', duration: 5 * 60 },
+            { label: 'Work - 4',      duration: 25 * 60 },
+            { label: 'Long Break',    duration: 15 * 60 },
+        ];
+
+        let phaseIndex = 0;
+        let timeRemaining = phases[0].duration;
+        let timerInterval = null;
+        let running = false;
+
+        const phaseEl = this.querySelector('.pomodoro-phase');
+        const timeEl = this.querySelector('.pomodoro-time');
+        const buttonEl = this.querySelector('.pomodoro-button');
+
+        const formatTime = (seconds) => {
+            const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+            const s = String(seconds % 60).padStart(2, '0');
+            return `${m}:${s}`;
+        };
+
+        buttonEl.addEventListener('click', () => {
+            if (!running) {
+                running = true;
+                buttonEl.textContent = 'Pause';
+                timerInterval = setInterval(() => {
+                    timeRemaining--;
+                    timeEl.textContent = formatTime(timeRemaining);
+
+                    if (timeRemaining <= 0) {
+                        clearInterval(timerInterval);
+                        phaseIndex = (phaseIndex + 1) % phases.length;
+                        timeRemaining = phases[phaseIndex].duration;
+                        phaseEl.textContent = phases[phaseIndex].label;
+                        timeEl.textContent = formatTime(timeRemaining);
+                        running = false;
+                        buttonEl.textContent = 'Start';
+                    }
+                }, 1000);
+            } else {
+                running = false;
+                clearInterval(timerInterval);
+                buttonEl.textContent = 'Resume';
+            }
         });
     }
 }
