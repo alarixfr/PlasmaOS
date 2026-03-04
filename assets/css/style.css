@@ -233,13 +233,17 @@ body {
 .terminal-line input {
     color: white;
     width: 60%;
-    border: none;
+    border: 1px solid white;
+    padding: 5px;
     background: none;
 }
 
 .terminal-content {
     overflow: auto;
     max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .pomodoro-window {

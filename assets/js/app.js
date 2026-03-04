@@ -121,6 +121,8 @@ class terminalAppWindow extends HTMLElement {
             </div>
         `;
 
+        this.querySelector('.terminal-input').focus();
+
         this.querySelector('.window-close').addEventListener('click', () => {
             activeWindow = '';
             this.remove();
@@ -146,7 +148,7 @@ class terminalAppWindow extends HTMLElement {
             } else if (latestCmd.value === "random") {
                 resultText = `${Math.floor((Math.random() * 100) + 1)}`;
             } else {
-                resultText = 'Command not recognized as an internal or external command.';
+                resultText = '[NOT FOUND] Command not recognized as an internal or external command. (try "help")';
             }
 
             const resultElement = document.createElement('p');
