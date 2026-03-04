@@ -3,9 +3,9 @@ const aboutApp = document.getElementById('system-app');
 const terminalApp = document.getElementById('terminal-app');
 const noteApp = document.getElementById('note-app');
 const pomodoroApp = document.getElementById('pomodoro-app');
+const noteKey = 'PLASMANOTEKEY';
 
 let activeWindow = '';
-
 let savedNote = '';
 
 aboutApp.addEventListener('click', () => {
@@ -178,7 +178,7 @@ class noteAppWindow extends HTMLElement {
             </div>
         `;
 
-        this.querySelector('.note-textarea').value = savedNote;
+        this.querySelector('.note-textarea').value = localStorage.getItem(noteKey) || '';
 
         this.querySelector('.window-close').addEventListener('click', () => {
             activeWindow = '';
@@ -186,7 +186,8 @@ class noteAppWindow extends HTMLElement {
         });
 
         this.querySelector('.note-savebtn').addEventListener('click', (e) => {
-            savedNote = this.querySelector('.note-textarea').value;
+            const noteData =  this.querySelector('.note-textarea').value;
+            localStorage.setItem(noteKey, noteData)
             e.target.textContent = 'Saved';
             setTimeout(() => {
                 e.target.textContent = 'Save';
